@@ -1,0 +1,36 @@
+task 2: grade
+
+import java.util.Scanner;
+
+public class GradeCalculator {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String continueInput;
+
+        do {
+            System.out.println("Enter marks obtained: ");
+            int marks = scanner.nextInt();
+
+            char grade;
+            if (marks >= 90) {
+                grade = 'A';
+            } else if (marks >= 80) {
+                grade = 'B';
+            } else if (marks >= 70) {
+                grade = 'C';
+            } else if (marks >= 60) {
+                grade = 'D';
+            } else {
+                grade = 'F';
+            }
+
+            System.out.println("Grade: " + grade);
+
+            System.out.println("Do you want to enter another marks? (yes/no): ");
+            continueInput = scanner.next();
+        } while (continueInput.equalsIgnoreCase("yes"));
+
+        scanner.close();
+    }
+}
